@@ -1,0 +1,18 @@
+# Remuestrea y guarda con el nombre original
+# los audios seleccionados
+# el script debe estar en la misma carpeta que los 
+# audios
+#
+# ponga todos los audios en el panel de objetos
+# Run
+# Cambiar la frecuencia de muestreo manualmente
+# en caso de que sea necesario
+
+ene = numberOfSelected ("Sound")
+for i to ene
+	select i
+	sonido$ = selected$("Sound")	
+	Resample: 44100, 50
+	Rename: sonido$
+	Save as WAV file: sonido$+".wav"
+endfor
